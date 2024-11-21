@@ -1,4 +1,4 @@
-#Sesi Store - Sistema de Carrinho de Compras
+# Sesi Store - Sistema de Carrinho de Compras
 Descrição
 Sesi Store é um sistema web desenvolvido em Spring Boot para gerenciar produtos, carrinhos de compras e usuários.
 Ele foi desenvolvido como ferramenta de apoio aos estudos dos alunos do curso de TDS-NEM do Colégio SESI-Maringá.
