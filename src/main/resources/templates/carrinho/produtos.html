@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Produtos</title>
+        <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sesi Store</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/carrinho}">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/produtos/listar}">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Produtos Disponíveis</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="produto : ${produtos}">
+                <td th:text="${produto.nome}"></td>
+                <td th:text="${produto.descricao}"></td>
+                <td th:text="${produto.preco}"></td>
+                <td>
+                    <!-- Input para a quantidade -->
+                    <form th:action="@{/carrinho/adicionar}" method="post">
+                        <input type="hidden" name="usuarioId" th:value="${usuarioId}" />
+                        <input type="hidden" name="produtoId" th:value="${produto.id}" />
+                        <input type="number" name="quantidade" th:value="${produto.quantidade}" />
+                        <button type="submit">Adicionar ao Carrinho</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

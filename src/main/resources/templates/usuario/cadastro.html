@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sesi Store</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/carrinho}">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/produtos/listar}">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+ 
+ <div class="container w-25">
+    <h2 class="text-primary shadow p-1 text-center"> Cadastrar - Usuário</h2>
+		<form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post" class="shadow p-3 mb-3 bg-white rounded">
+		    <!-- Campo oculto para o ID -->
+    		<input type="hidden" th:field="*{id}" />
+    		
+		  <div class="form-group">
+		    <label for="nome">Nome: </label>
+		    <input type="text" class="form-control" id="nome" laceholder="Seu nome" th:field="*{nome}" placeholder="Seu nome" required>
+		    
+		  </div>
+		  <div class="form-group">
+		    <label for="email">E-mail:</label>
+		    <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="E-mail" required >
+			   
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="senha">Senha:</label>
+		    <input type="password" class="form-control" id="senha" th:field="*{senha}" placeholder="Senha" required >
+			  
+		  </div>
+		  
+		  <button type="submit" class="btn btn-primary">Enviar</button>
+
+    </div>
+    </div>
+</body>
+</html>
