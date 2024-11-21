@@ -6,26 +6,32 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Sesi Store</a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/carrinho}">Carrinho</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/produtos/listar}">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/logout}">Logout</a>
-                </li>
-            </ul>
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo Impact">
+            </a>
+            <form class="form-inline ml-auto">
+                <input class="search-bar" type="text" placeholder="O que você está procurando?">
+                <i class="icon fas fa-search"></i>
+                <i class="icon fas fa-star"></i>
+                <i class="icon fas fa-shopping-cart"></i>
+            </form>
         </div>
     </nav>
     
-    <main>
+     <div class="slider-container">
+        <div class="slider">
+            <div class="slide" th:each="produto : ${produtos}">
+                <img th:src="${produto.foto}" th:alt="'Foto de ' + ${produto.nome}">
+                <h5 th:text="${produto.nome}"></h5>
+                <p th:text="'R$ ' + ${produto.preco}"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Produtos -->
     <div class="container mt-4">
-        <h1 class="text-center mb-4">Nossos Produtos</h1>
         <div class="row">
             <div class="col-md-4 mb-4" th:each="produto : ${produtos}">
                 <div class="product-card">
@@ -43,9 +49,19 @@
             </div>
         </div>
     </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Sesi Store. Todos os direitos reservados.</p>
-    </footer>
+
+    <script>
+        // Slider Automático
+        const slider = document.querySelector('.slider');
+        let index = 0;
+
+        setInterval(() => {
+            index++;
+            if (index >= slider.children.length) {
+                index = 0;
+            }
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }, 3000); // Altere o intervalo (ms) conforme necessário
+    </script>
 </body>
 </html>
