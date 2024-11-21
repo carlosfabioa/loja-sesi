@@ -6,9 +6,8 @@ O projeto permite que cada usuário cadastrado tenha seu próprio carrinho de co
 A interface foi projetada para ser responsiva e intuitiva, utilizando Thymeleaf e o framework CSS Bootstrap.
 
 ## Funcionalidades
-### Página inicial (Home):
-Exibe todos os produtos cadastrados, incluindo suas fotos, nomes e preços.
-Permite adicionar produtos ao carrinho de compras.
+* Exibe todos os produtos cadastrados, incluindo suas fotos, nomes e preços.
+* Permite adicionar produtos ao carrinho de compras.
 
 ### Carrinho de Compras:
 Exibe apenas os itens do usuário logado.
