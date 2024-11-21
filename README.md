@@ -152,9 +152,9 @@ Execute o script SQL (se necessário) para criar as tabelas no banco.
 - [ ]  Permitir que usuários favoritem produtos para uma lista de desejos.
 - [ ]  Exibir um resumo do carrinho no menu principal ou no rodapé.
 - [ ]  Criar um painel administrativo para gerenciar:
-** Usuários.
-** Produtos.
-** Pedidos.
+* Usuários.
+* Produtos.
+* Pedidos.
 
 ## Escalabilidade e Expansão
 - [ ]  Criar uma API REST para permitir integração com aplicativos móveis.
