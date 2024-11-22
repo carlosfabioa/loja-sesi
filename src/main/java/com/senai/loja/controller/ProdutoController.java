@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.senai.loja.model.CategoriaProduto;
 import com.senai.loja.model.Produto;
@@ -46,6 +48,12 @@ public class ProdutoController {
 	public String listar(Model model) {
 		model.addAttribute("produtos", produtoService.listar());
 		return "produto/lista";
+	}
+	
+	@GetMapping("/gerenciar")
+	public String gerenciar(Model model) {
+		model.addAttribute("produtos", produtoService.listar());
+		return "produto/gerenciar";
 	}
 	
 	@GetMapping("editar/{id}")

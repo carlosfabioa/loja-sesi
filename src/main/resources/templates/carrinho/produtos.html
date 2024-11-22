@@ -2,28 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Lista de Produtos</title>
-        <link rel="stylesheet" href="/css/home.css">
-    
+      <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Sesi Store</a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/carrinho}">Carrinho</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/produtos/listar}">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/logout}">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div th:replace="~{fragments/nav :: nav}"></div>
 
-    <h1>Produtos Disponíveis</h1>
+
+    <h2 class="text-center mb-4">Produtos Disponíveis</h2>
     <table>
         <thead>
             <tr>

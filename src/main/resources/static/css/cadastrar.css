@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4F5358;
+    margin: 0;
+    padding: 0;
+}
+
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4F5358;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.container button {
+    width: 100%;
+    background-color: #4F5358;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+	
+.container button:hover {
+    background-color: #333333;
+}
+
+.container a {
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}

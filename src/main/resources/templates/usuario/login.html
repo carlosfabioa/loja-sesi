@@ -6,24 +6,24 @@
 </head>
 <body>
 <div class="login-container">
-	    <div th:if="${param.error}">
-        <p class="aviso">Usuário ou senha incorretos!.</p>
-    </div>
-        <h1>LOGIN</h1>
-        <form th:action="@{/usuarios/login}" method="post">
-            <label for="username" >Email:</label>
-	        <input type="text" id="username" name="username" required />
-	        <label for="password">Senha:</label>
-	        <input type="password" id="password" name="password" required />
-	        <button type="submit">Entrar</button>
-        </form>
-        
-        <p >Ainda não tem uma conta? <a th:href="@{/usuarios/novo}"> </br> Registre-se aqui!</a>.</p>
-        
-        <div th:if="${param.logout}">
-		    <p>Logout bem-sucedido.</p>
+    <div th:if="${param.error}">
+     		  <p class="aviso">Usuário ou senha incorretos!.</p>
+  		 </div>
+       <h1>LOGIN</h1>
+       <form th:action="@{/usuarios/login}" method="post">
+           <label for="username" >Email:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Entrar</button>
+       </form>
+       
+       <p >Ainda não tem uma conta? <a th:href="@{/usuarios/novo}"> </br> Registre-se aqui!</a>.</p>
+       
+       <div th:if="${param.logout}">
+	   		 <p>Logout bem-sucedido.</p>
 		</div>
-    </div>
+</div>
       
     
 

@@ -15,9 +15,9 @@ public class SecurityConfig {
 	        http
 	            .authorizeHttpRequests(authorize -> authorize
 	            	.requestMatchers("/h2-console/**").permitAll()
-	                .requestMatchers("/usuarios/login","usuarios/**", "/css/**", "/js/**").permitAll()
-	                .requestMatchers("/admin/**").hasRole("ADMIN")
-	                .requestMatchers("/produtos", "/carrinho/**", "/home").hasAnyRole("USER", "ADMIN")
+	                .requestMatchers("/usuarios/login", "/usuarios/novo", "/css/**", "/js/**").permitAll()
+	                .requestMatchers("/admin/**", "usuarios/**","/produtos/**").hasRole("ADMIN")
+	                .requestMatchers("/produtos/listar", "/carrinho/**", "/home").hasAnyRole("USER", "ADMIN")
 	                .anyRequest().authenticated()
 	            )
 	            .formLogin(form -> form
@@ -28,6 +28,8 @@ public class SecurityConfig {
 	            .logout(logout -> logout
 	                .logoutUrl("/logout")
 	                .logoutSuccessUrl("/login?logout")
+	                .invalidateHttpSession(true)
+	                .deleteCookies("JSESSIONID") 
 	                .permitAll()
 	            );
 	        
