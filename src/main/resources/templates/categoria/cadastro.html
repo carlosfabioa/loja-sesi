@@ -2,25 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Lista de Usuários</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"  href="/css/cadastrar.css">
+	<link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
 
-<div class="container-fluid m-0 p-0">
-    <div class="d-flex justify-content-between align-items-center mb-4  bg-primary">
-        <h1 class="text-light m-2" >Gerenciamento de Tarefas</h1>
-        <div>
-            <a href="/usuarios/novo" class="btn btn-primary">Cadastro de Usuários</a>
-            <a href="/tarefas/nova" class="btn btn-primary">Cadastro de Tarefas</a>
-            <a href="/tarefas/gerenciar" class="btn btn-primary">Gerenciar Tarefas</a>
-        </div>
-    </div>
-    
-   </div>
+	<div th:replace="~{fragments/nav :: nav}"></div>
+
  
  <div class="container w-25">
-    <h2 class="text-primary shadow p-1 text-center"> Cadastrar - Categoria do Produto</h2>
+		<h2 class="text-center">Cadastrar - Categoria</h2>
 		<form th:action="@{/categorias/salvar}" th:object="${categoria}" method="post" class="shadow p-3 mb-3 bg-white rounded">
 		    <!-- Campo oculto para o ID -->
     		<input type="hidden" th:field="*{id}" />
@@ -31,8 +23,11 @@
 		  </div>
 		 
 					  
-		  <button type="submit" class="btn btn-primary">Enviar</button>
+		  <button type="submit" class="btn btn-primary">Salvar</button>
 		</form>
     </div>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
