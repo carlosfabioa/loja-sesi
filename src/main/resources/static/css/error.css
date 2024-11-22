@@ -1,0 +1,39 @@
+body{
+	background-color: #4F5358;
+	height: 100vh;
+	background-image: url('../images/logoSemFundo.png');
+	background-repeat: repeat;
+	background-size: 200px;
+	background-position: center;
+}
+
+.error-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-container h1 {
+    font-size: 2.5em;
+    color: #d9534f;
+    text-shadow: black 0.1em 0.1em 0.2em
+    
+}
+
+.error-container p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.error-container .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #0275d8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.error-container .button:hover {
+    background-color: #025aa5;
+}

@@ -15,8 +15,8 @@ public class SecurityConfig {
 	        http
 	            .authorizeHttpRequests(authorize -> authorize
 	            	.requestMatchers("/h2-console/**").permitAll()
-	                .requestMatchers("/usuarios/login", "/usuarios/novo", "/css/**", "/js/**").permitAll()
-	                .requestMatchers("/admin/**", "usuarios/**","/produtos/**").hasRole("ADMIN")
+	                .requestMatchers("/usuarios/login", "/usuarios/novo", "/css/**", "/js/**", "/images/**").permitAll()
+	                .requestMatchers("/admin/**", "usuarios/**","/produtos/novo","/produtos/gerenciar").hasRole("ADMIN")
 	                .requestMatchers("/produtos/listar", "/carrinho/**", "/home").hasAnyRole("USER", "ADMIN")
 	                .anyRequest().authenticated()
 	            )

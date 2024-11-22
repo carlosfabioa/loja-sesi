@@ -3,6 +3,11 @@
             background-color: #4F5358;
             margin: 0;
             padding: 0;
+            	height: 100vh;
+	background-image: url('../images/logoSemFundo.png');
+	background-repeat: repeat;
+	background-size: 200px;
+	background-position: center;
         }
 
         .navbar {

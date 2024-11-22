@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Acesso Negado</title>
+    <link rel="stylesheet" type="text/css" href="/css/error.css">
+</head>
+<body>
+    <div id="container" class="error-container">
+        <h1>403 - Acesso Negado</h1>
+        <p th:text="${message}">Você não tem permissão para acessar este recurso.</p>
+        <a th:href="@{/home}" class="button">Voltar para a Página Inicial</a>
+    </div>
+</body>
+</html>
